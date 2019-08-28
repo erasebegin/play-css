@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Gayathri|Livvic&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    --purple-light: rgb(233, 215, 255);
-    --purple-light2: rgb(247, 234, 255);
-    --purple-dark: rgb(28, 0, 65);
-    --purple-dark2: rgb(51, 0, 117);
+    font-family: 'Livvic', sans-serif;
+    --purple1: rgb(131, 41, 166);
+    --purple2: rgb(94, 29, 193);
+    --pink1: rgb(167, 53, 138);
+    --pink2: rgb(167, 53, 138);
+    --purple-pale: rgba(113, 89, 199, 1);
     --texture1: linear-gradient(0deg, rgba(51, 74, 220, 0.44) 0%, 
                 rgba(51, 74, 220, 0.44) 22%,
                 rgba(72, 79, 213, 0.44) 22%, 
@@ -30,7 +33,7 @@
                     rgb(131, 41, 166) 77%,rgb(113, 35, 180) 77%, 
                     rgb(113, 35, 180) 81%,rgb(94, 29, 193) 81%, 
                     rgb(94, 29, 193) 82%,rgb(76, 23, 207) 82%, 
-                    rgb(76, 23, 207) 100%)
+                    rgb(76, 23, 207) 100%);
 }
 
 #header {
@@ -42,7 +45,7 @@
     height: 10vh;
     align-items: center;
     justify-items: center;
-    background: linear-gradient(var(--purple-dark2),rgba(154, 98, 185, 0.44));
+    background: linear-gradient(var(--purple1),rgba(154, 98, 185, 0.44));
     opacity: 0.9;
 }
 
@@ -50,9 +53,9 @@
     margin: auto;
     width: 100vw;
     font-size: 3em;
-    color: var(--purple-light);
+    color: rgb(54, 29, 66);
     text-align: center;
-    text-shadow: 2px 2px 5px var(--purple-dark);
+    text-shadow: 2px 2px 5px var(--purple2);
 }
 
 #nav {
@@ -67,8 +70,8 @@
     text-decoration: none;
     color: rgb(251, 233, 255);
     font-size: 1em;
-    background-color: var(--purple-dark2);
-    border: 1px solid var(--purple-dark2);
+    background-color: var(--purple1);
+    border: 1px solid var(--purple2);
     border-radius: 5px;
 }
 
@@ -78,109 +81,61 @@
 
 .nav-link:hover {
     filter: hue-rotate(33deg);
-    box-shadow: 0px 0px 5px var(--purple-light);
+    box-shadow: 0px 0px 5px var(--purple1);
 }
 
 #body-container {
     display: flex;
     flex-flow: column nowrap;
+    height: 100vh;
     background: var(--texture1);
 }
 
-.canvas {
-    margin: auto;
-    display: flex;
-    flex-flow: column nowrap;
-    height: 800px;
-    width: 75vw;
-    /* background-color: var(--purple-dark); */
-}
-
 #canvas1 {
+    margin: auto;
     margin-top: 200px;
+    display: flex;
+    flex-flow: row, nowrap;
+    height: 500px;
+    width: 75vw;
 }
 
-#head {
+
+.box {
+    display: inline-block;
     margin: auto;
-    margin-bottom: 0px;
-    margin-top: 100px;
-    display: flex;
-    flex-flow: row wrap;
-    height: 100px;
-    width: 150px;
-    border: 2px solid black;
+    margin-left: 0px;
+    margin-right: 0px;
+    height: 120px;
+    width: 60px;
+    transition: 0.5s;
+    background-image:linear-gradient(50deg,var(--pink2),var(--purple1));
+    background-position: left;
+    background-size: 300%;
+    text-align: center;
+    font-size: 2em;
+    color: rgba(0,40,0,0);
+    line-height: 200px;
+}
+
+.box:hover, .box:focus {
+    height: 300px;
+    background-position: right;
+    color: rgba(0,40,0,100);
     border-radius: 10px;
-    background: rgb(224, 190, 255);
+    line-height: 300px;
+    transition: 0.5s;
 }
 
-#eye1 {
-    display: flex;
-    margin: auto;
-    height: 30px;
-    width: 30px;
-    border: 2px solid black;
-    border-radius: 100px;
-    background-color: rgb(248, 240, 255);
-    box-shadow: 0px 0px 10px rgb(146, 56, 173);
-}
-
-#pupil1 {
-    margin: auto;
-    margin-bottom: 0px;
-    height: 15px;
-    width: 20px;
-    border: 1px solid black;
+#box1 {
+    margin-left: auto;
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    background-color: black;
-}
-
-#eye2 {
-    display: flex;
-    margin: auto;
-    height: 30px;
-    width: 30px;
-    border: 2px solid black;
-    border-radius: 100px;
-    background-color: rgb(248, 240, 255);
-    box-shadow: 0px 0px 10px rgb(146, 56, 173);
-}
-
-#pupil2 {
-    margin: auto;
-    margin-bottom: 0px;
-    height: 15px;
-    width: 20px;
-    border: 1px solid black;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    background-color: black;
-}
-
-#mouth {
-    margin: auto;
-    margin-bottom: 3px;
-    height: 50px;
-    width: 100px;
-    background: linear-gradient(180deg,black,rgb(146, 56, 173));
-    border: 2px solid black;
-    border-bottom: none;
     border-bottom-left-radius: 10px;
+}
+
+#box10 {
+    margin-right: auto;
+    border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
-#torso {
-    margin: auto;
-    margin-top: 0px;
-    height: 275px;
-    width: 250px;
-    border: 2px solid black;
-    border-radius: 10px;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    background: rgb(224, 190, 255);
-}
